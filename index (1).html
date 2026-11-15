@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2a0716">
+<title>Para Adrian ❤️</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23e0457b' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#2a0716;--wine2:#4a0e27;--rose:#9c2556;--pink:#f08aa8;--blush:#fbdde5;--gold:#e8c98a;
+--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--script:'Great Vibes','Brush Script MT',cursive}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{min-height:100dvh;font-family:var(--serif);font-size:1.25rem;color:var(--blush);overflow-x:hidden;
+background:radial-gradient(ellipse at 50% 0%,#6b1636 0%,#3a0b20 45%,#1f0512 100%) fixed;touch-action:manipulation}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation}
+#sky,#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+#sky{z-index:0}#hearts{z-index:1}
+#sky i{position:absolute;width:var(--z);height:var(--z);background:#fff;border-radius:50%;box-shadow:0 0 8px 2px rgba(255,220,230,.7);animation:tw var(--d) ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.6)}50%{opacity:1;transform:scale(1.3)}}
+.fh{position:absolute;bottom:-40px;animation:up linear forwards;opacity:0;text-shadow:0 0 12px currentColor}
+@keyframes up{0%{opacity:0;transform:translateY(0) rotate(0)}10%{opacity:.8}90%{opacity:.5}100%{opacity:0;transform:translateY(-110dvh) rotate(40deg)}}
+.b{position:fixed;z-index:50;pointer-events:none;animation:bs 1.4s ease-out forwards;text-shadow:0 0 10px currentColor}
+@keyframes bs{0%{opacity:1;transform:translate(-50%,-50%) scale(.4)}100%{opacity:0;transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.2)}}
+.screen{position:fixed;inset:0;z-index:5;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+padding:calc(24px + env(safe-area-inset-top)) 24px calc(24px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;transition:opacity .8s,visibility .8s}
+.screen.on{opacity:1;visibility:visible}
+h1,h2{font-family:var(--script);font-weight:400;color:#fff;text-shadow:0 0 24px rgba(240,90,140,.55)}
+.lead{font-size:1.7rem;font-style:italic;line-height:1.3;max-width:20ch}
+.sub{font-size:1.3rem;opacity:.85;margin-top:.7rem}
+.bigheart{width:min(58vw,235px);aspect-ratio:1;background:none;border:0;margin:1.6rem 0 .6rem;filter:drop-shadow(0 0 30px rgba(240,90,140,.75));animation:beat 1.7s infinite}
+.bigheart svg{width:100%;height:100%}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.12)}28%{transform:scale(1)}42%{transform:scale(1.07)}}
+.hint{font-style:italic;opacity:.7;animation:pl 2.4s ease-in-out infinite}
+@keyframes pl{50%{opacity:.25}}
+#date{width:min(78vw,300px);font:600 2rem var(--serif);text-align:center;letter-spacing:.08em;color:#fff;background:rgba(255,255,255,.07);
+border:1px solid rgba(240,138,168,.6);border-radius:16px;padding:.8rem;margin:1.6rem 0 .8rem;outline:none}
+#date:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(232,201,138,.25)}
+#date::placeholder{color:rgba(251,221,229,.35);letter-spacing:.12em}
+.shake{animation:sk .45s}
+@keyframes sk{20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}
+#err{min-height:3.2rem;max-width:26ch;font-style:italic;color:var(--gold)}
+.btn{min-height:56px;padding:.7rem 2.4rem;border-radius:30px;border:0;font-size:1.4rem;font-weight:600;color:#fff;
+background:linear-gradient(135deg,#d93a76,#9c2556);box-shadow:0 8px 24px rgba(217,58,118,.4)}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:transparent;border:1px solid var(--pink);box-shadow:none}
+#main{display:none;position:relative;z-index:2;opacity:0;transition:opacity 1.2s}
+#main.on{opacity:1}
+.sec{padding:3.5rem 22px;display:flex;flex-direction:column;align-items:center;text-align:center}
+#cover{min-height:100dvh;justify-content:center;padding-top:calc(3.5rem + env(safe-area-inset-top))}
+#cover h1{font-size:clamp(2.9rem,14vw,4.4rem);line-height:1.1;animation:glow 4s ease-in-out infinite}
+@keyframes glow{50%{text-shadow:0 0 40px rgba(255,120,170,.95)}}
+.dates{font-size:1.5rem;letter-spacing:.14em;color:var(--gold);margin:.9rem 0 2rem}
+.count{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;width:min(92vw,380px)}
+.count div{border:1px solid rgba(240,138,168,.35);border-radius:18px;padding:.8rem .2rem;background:rgba(255,255,255,.05);backdrop-filter:blur(4px)}
+.count b{display:block;font-size:2.2rem;line-height:1.1;color:#fff;font-weight:600;font-variant-numeric:tabular-nums}
+.count small{font-size:1rem;opacity:.8}
+.route{display:flex;align-items:center;gap:.6rem;width:min(92vw,380px);margin-top:1.8rem}
+.pais{display:flex;flex-direction:column;align-items:center;font-size:1.1rem;line-height:1.2}
+.pais span{font-size:2.1rem}
+.track{position:relative;flex:1;height:30px;overflow:hidden}
+.track::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px dashed rgba(240,138,168,.6)}
+.track svg{position:absolute;top:3px;left:-6%;width:24px;height:24px;fill:var(--gold);transform:rotate(90deg);filter:drop-shadow(0 0 6px var(--gold));animation:fly 5s ease-in-out infinite}
+@keyframes fly{0%{left:-6%;opacity:0}12%{opacity:1}88%{opacity:1}100%{left:92%;opacity:0}}
+@media (prefers-reduced-motion:reduce){.track svg{animation:none!important;left:45%;opacity:1}}
+#tot{margin-top:1.2rem;font-style:italic;opacity:.85;max-width:28ch}
+.cue{margin-top:2.4rem;font-style:italic;opacity:.7}
+.cue span{display:block;font-size:1.6rem;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+.sec h2{font-size:3rem;margin-bottom:2rem}
+.tl{position:relative;width:100%;max-width:420px;padding-left:2.2rem;text-align:left}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:0;width:2px;background:linear-gradient(var(--pink),rgba(240,138,168,.1))}
+.it{position:relative;margin-bottom:2.4rem;opacity:0;transform:translateY(20px);transition:opacity 1s,transform 1s}
+.it.in{opacity:1;transform:none}
+.it::before{content:"";position:absolute;left:-2.2rem;top:.45rem;width:16px;height:16px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(232,201,138,.2),0 0 18px var(--gold)}
+.it.big::before{background:#f0457b;box-shadow:0 0 0 5px rgba(240,69,123,.25),0 0 22px #f0457b}
+.it em{display:block;color:var(--gold);font-size:1.15rem}
+.it h3{font-size:1.65rem;font-weight:600;color:#fff;margin:.1rem 0 .3rem}
+.it p{font-size:1.2rem;line-height:1.55;opacity:.92}
+.env{display:block;position:relative;width:min(80vw,310px);height:205px;margin:.5rem auto 0;border:0;background:none;perspective:900px;transition:opacity .6s}
+.env>*{position:absolute}
+.env .back{inset:0;background:#6e1640;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.env .paper{left:8%;right:8%;top:8%;height:80%;background:#fff1ec;border-radius:4px;transition:transform .9s .4s}
+.env .pocket{inset:0;z-index:2;border-radius:8px;background:linear-gradient(160deg,#b02a63,#8a1f4e);clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%)}
+.env .flap{left:0;right:0;top:0;height:56%;z-index:3;background:linear-gradient(#cf3b77,#b02a63);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s}
+.env .seal{left:50%;top:44%;z-index:4;transform:translate(-50%,-50%);font-size:2.3rem;color:var(--gold);filter:drop-shadow(0 0 8px rgba(0,0,0,.5));animation:beat 1.7s infinite;transition:opacity .4s}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .paper{transform:translateY(-52%)}
+.env.open .seal{opacity:0}
+#tap{margin-top:1.6rem}
+#letter{display:none;width:100%;max-width:440px;text-align:left;background:#fff1ec;color:#4a1128;border-radius:6px;padding:2rem 1.6rem 2.2rem;
+box-shadow:0 20px 50px rgba(0,0,0,.5);background-image:repeating-linear-gradient(transparent 0 33px,rgba(176,42,99,.09) 33px 34px)}
+#letter.show{display:block;animation:rise 1.2s ease-out}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.96)}}
+#letter h3{font:400 2.4rem var(--script);color:#9c2556;margin-bottom:.8rem}
+#letter p{font-size:1.28rem;line-height:34px;margin-bottom:.9rem}
+#letter .sig{font:400 2.1rem var(--script);color:#9c2556;text-align:right;line-height:1.2;margin-top:1rem}
+#final{min-height:100dvh;justify-content:center;padding-bottom:calc(3rem + env(safe-area-inset-bottom))}
+#final blockquote{font-size:clamp(1.9rem,8.4vw,2.6rem);font-style:italic;font-weight:500;line-height:1.3;color:#fff;max-width:17em;
+text-shadow:0 0 30px rgba(240,90,140,.6);opacity:0;transform:scale(.94);transition:opacity 2s,transform 2s}
+#final blockquote.in{opacity:1;transform:none}
+#final .btn{margin-top:2.4rem}
+#hug{min-height:2rem;margin-top:1rem;font-style:italic;color:var(--gold)}
+footer{padding:1rem 0 3rem;text-align:center;opacity:.55;font-style:italic;font-size:1.05rem}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<noscript><p style="position:fixed;inset:0;z-index:99;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;background:#2a0716;color:#fbdde5;font:1.4rem Georgia,serif">Abre este enlace en Chrome o Safari para ver la sorpresa ❤️</p></noscript>
+<div id="sky"></div><div id="hearts"></div>
+
+<!-- 1. BIENVENIDA -->
+<section id="welcome" class="screen on">
+  <p class="lead">Esta sorpresa es solo para Adrian</p>
+  <p class="sub">Preparé algo especial para ti</p>
+  <button class="bigheart" id="heart" aria-label="Toca el corazón">
+    <svg viewBox="0 0 24 24"><defs><linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff7aa8"/><stop offset="1" stop-color="#b8205c"/></linearGradient></defs>
+    <path fill="url(#hg)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/></svg>
+  </button>
+  <p class="hint">Toca el corazón</p>
+</section>
+
+<!-- 2. CONTRASEÑA -->
+<section id="pass" class="screen">
+  <p class="lead">Solo tú puedes abrir este pequeño mundo que preparé para ti</p>
+  <input id="date" type="text" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="DD/MM/AAAA" aria-label="Fecha especial">
+  <p id="err" aria-live="polite"></p>
+  <button class="btn" id="open">Abrir</button>
+</section>
+
+<main id="main">
+  <!-- 3. PORTADA -->
+  <section class="sec" id="cover">
+    <h1>Felices 2 años, Adrian ❤️</h1>
+    <p class="dates">15.11.2024 – 15.11.2026</p>
+    <div class="count" aria-label="Tiempo juntos">
+      <div><b id="cy">0</b><small>años</small></div><div><b id="cmo">0</b><small>meses</small></div><div><b id="cd">0</b><small>días</small></div>
+      <div><b id="ch">0</b><small>horas</small></div><div><b id="cmi">0</b><small>minutos</small></div><div><b id="cs">0</b><small>segundos</small></div>
+    </div>
+    <p id="tot"></p>
+    <div class="route" role="img" aria-label="De Bolivia a Perú"><div class="pais"><span>🇧🇴</span>Bolivia</div><div class="track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></div><div class="pais"><span>🇵🇪</span>Perú</div></div>
+    <p class="cue">Desliza para ver nuestra historia<span>⌄</span></p>
+  </section>
+
+  <!-- 4. HISTORIA (edita los textos para añadir recuerdos reales) -->
+  <section class="sec" id="story">
+    <h2>Nuestra historia</h2>
+    <div class="tl">
+      <div class="it big"><em>15 de noviembre de 2024</em><h3>Comenzó nuestra historia</h3><p>Ese día empezó algo que todavía no sabíamos que se volvería tan importante.</p></div>
+      <div class="it"><em>Día a día</em><h3>Nuestras conversaciones</h3><p>Mensajes y conversaciones que hicieron que la distancia se sintiera más pequeña. Palabras que llegan justo cuando se necesitan.</p></div>
+      <div class="it"><em>Con el tiempo</em><h3>Los recuerdos que construimos</h3><p>Dos años de ganas, de esperar y de elegirnos incluso a kilómetros. Cada conversación se fue volviendo un recuerdo.</p></div>
+      <div class="it big"><em>15 de noviembre de 2026</em><h3>Nuestros dos años juntos</h3><p>Hoy celebramos dos años de historia. Y todavía nos queda muchísimo por escribir.</p></div>
+    </div>
+  </section>
+
+  <!-- 5. CARTA -->
+  <section class="sec" id="lsec">
+    <h2>Una carta para ti</h2>
+    <button class="env" id="env" aria-label="Abrir la carta">
+      <div class="back"></div><div class="paper"></div><div class="pocket"></div><div class="flap"></div><div class="seal">❤</div>
+    </button>
+    <p class="hint" id="tap">Toca el sobre</p>
+    <article id="letter">
+      <h3>Mi Bebe,</h3>
+      <p>Hoy se cumplen dos años desde que empezó la historia que más cuido. Quiero decirte con calma, y con el corazón abierto, lo que significa para mí.</p>
+      <p>Querer a la distancia no es fácil. Hay días en los que quisiera que una pantalla pudiera abrazar. Pero cada vez que me escribes, los kilómetros se hacen un poquito más pequeños. Tus mensajes y tus palabras se volvieron mi lugar favorito del día.</p>
+      <p>Gracias por quedarte, por escucharme y por hacerme sentir que no estoy sola. Lo que hemos construido con conversaciones, con tiempo y con cariño es real, y lo sé porque lo siento todos los días.</p>
+      <p>Quiero seguir eligiéndote en los días fáciles, en los difíciles y en todos los mensajes que todavía nos faltan por escribir. Ojalá pronto la distancia sea solo una parte de nuestra historia que contemos con una sonrisa.</p>
+      <p>Gracias por estos dos años. Te quiero hoy, y te querré mañana.</p>
+      <p>Feliz aniversario, mi amor.</p>
+      <div class="sig" id="sig">Con todo mi amor ❤️</div>
+    </article>
+  </section>
+
+  <!-- 6. MENSAJE FINAL -->
+  <section class="sec" id="final">
+    <blockquote>La distancia nos separa por kilómetros, pero no cambia lo bonito que hemos construido. Felices 2 años, mi Bebe. ❤️</blockquote>
+    <button class="btn ghost" id="hugbtn">Mandarte un abrazo</button>
+    <p id="hug" aria-live="polite"></p>
+  </section>
+  <footer>Hecho con todo mi amor, para ti</footer>
+</main>
+
+<script>
+/* ===== CONFIGURACIÓN (edita aquí) ===== */
+const CONFIG={
+  clave:'15112024',                 // contraseña: solo números de la fecha
+  inicio:new Date(2024,10,15,0,0,0),// 15 nov 2024 (el mes va de 0 a 11)
+  firma:'Con todo mi amor ❤️'       // cambia por tu nombre si quieres
+};
+const $=s=>document.querySelector(s);
+const calm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const rnd=(a,b)=>a+Math.random()*(b-a);
+$('#sig').textContent=CONFIG.firma;
+
+/* Estrellas */
+for(let i=0;i<42;i++){const s=document.createElement('i');
+  s.style.cssText=`left:${rnd(0,100)}%;top:${rnd(0,100)}%;--d:${rnd(2,6)}s;--z:${rnd(1,3.2)}px;animation-delay:${rnd(0,4)}s`;$('#sky').appendChild(s)}
+
+/* Corazones flotantes */
+const COL=['#f0457b','#ff8fb1','#e8c98a','#d93a76','#fbdde5'];
+function floatHeart(){const h=document.createElement('span');h.className='fh';h.textContent=Math.random()<.85?'♥\uFE0E':'✦\uFE0E';
+  const d=rnd(9,16);h.style.cssText=`left:${rnd(0,96)}%;font-size:${rnd(12,34)}px;color:${COL[(Math.random()*COL.length)|0]};animation-duration:${d}s`;
+  $('#hearts').appendChild(h);setTimeout(()=>h.remove(),d*1000)}
+if(!calm){for(let i=0;i<8;i++)setTimeout(floatHeart,i*400);setInterval(floatHeart,900)}
+
+/* Explosión de corazones */
+function burst(x,y,n=8){if(calm)n=Math.min(n,3);
+  for(let i=0;i<n;i++){const b=document.createElement('span');b.className='b';b.textContent=Math.random()<.8?'♥\uFE0E':'✦\uFE0E';
+    b.style.cssText=`left:${x}px;top:${y}px;font-size:${rnd(14,32)}px;color:${COL[(Math.random()*COL.length)|0]};--dx:${rnd(-170,170)}px;--dy:${rnd(-300,-40)}px`;
+    document.body.appendChild(b);setTimeout(()=>b.remove(),1500)}}
+document.addEventListener('pointerdown',e=>{if(e.target.closest('input'))return;burst(e.clientX,e.clientY,5)});
+
+
+/* 1 → 2: bienvenida a contraseña */
+$('#heart').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,18);
+  $('#welcome').classList.remove('on');setTimeout(()=>{$('#pass').classList.add('on');setTimeout(()=>$('#date').focus(),700)},700)});
+
+/* 2: contraseña */
+const inp=$('#date'),err=$('#err');let tries=0;
+const MSG=['Mmm, esa no es… piensa en el día en que todo empezó 🤍','Casi, mi amor. Escribe nuestra fecha: día, mes y año 💌','Tranquilo, tú puedes. Es el día en que comenzó nuestra historia ✨'];
+inp.addEventListener('input',()=>{const d=inp.value.replace(/\D/g,'').slice(0,8);
+  inp.value=d.replace(/^(\d{2})(\d)/,'$1/$2').replace(/^(\d{2})\/(\d{2})(\d)/,'$1/$2/$3');err.textContent=''});
+inp.addEventListener('keydown',e=>{if(e.key==='Enter')check()});
+$('#open').addEventListener('click',check);
+function check(){
+  if(inp.value.replace(/\D/g,'')===CONFIG.clave){
+    err.textContent='Bienvenido, mi amor ❤️';inp.blur();
+    for(let i=0;i<9;i++)setTimeout(()=>burst(rnd(40,innerWidth-40),rnd(innerHeight*.4,innerHeight*.9),12),i*160);
+    setTimeout(()=>{$('#pass').classList.remove('on');setTimeout(()=>{$('#pass').style.display='none';$('#main').style.display='block';
+      scrollTo(0,0);requestAnimationFrame(()=>requestAnimationFrame(()=>$('#main').classList.add('on')))},800)},1900);
+  }else{
+    err.textContent=MSG[tries++%MSG.length];inp.classList.remove('shake');void inp.offsetWidth;inp.classList.add('shake');
+    if(navigator.vibrate)navigator.vibrate(60)}}
+
+/* 3: contador de tiempo juntos */
+function counter(){const b=new Date(),a=CONFIG.inicio;
+  let y=b.getFullYear()-a.getFullYear(),mo=b.getMonth()-a.getMonth(),d=b.getDate()-a.getDate(),
+      h=b.getHours()-a.getHours(),mi=b.getMinutes()-a.getMinutes(),s=b.getSeconds()-a.getSeconds();
+  if(s<0){s+=60;mi--}if(mi<0){mi+=60;h--}if(h<0){h+=24;d--}
+  if(d<0){d+=new Date(b.getFullYear(),b.getMonth(),0).getDate();mo--}if(mo<0){mo+=12;y--}
+  [['cy',y],['cmo',mo],['cd',d],['ch',h],['cmi',mi],['cs',s]].forEach(([id,v])=>$('#'+id).textContent=v);
+  $('#tot').textContent='Son '+Math.floor((b-a)/864e5).toLocaleString('es')+' días de historia juntos.'}
+counter();setInterval(counter,1000);
+
+/* Aparición suave de la historia y del mensaje final */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.35});
+document.querySelectorAll('.it,#final blockquote').forEach(el=>io.observe(el));
+
+/* 5: sobre y carta */
+$('#env').addEventListener('click',()=>{const env=$('#env');if(env.classList.contains('open'))return;
+  env.classList.add('open');$('#tap').style.display='none';
+  setTimeout(()=>env.style.opacity=0,1500);
+  setTimeout(()=>{env.style.display='none';$('#letter').classList.add('show');
+    $('#letter').scrollIntoView({behavior:'smooth',block:'start'})},2100)});
+
+/* 6: abrazo */
+$('#hugbtn').addEventListener('click',e=>{const r=e.currentTarget.getBoundingClientRect();
+  for(let i=0;i<5;i++)setTimeout(()=>burst(r.left+r.width/2,r.top,14),i*140);
+  $('#hug').textContent='Un abrazo enorme, aunque sea desde lejos 🤍'});
+</script>
+</body>
+</html>
